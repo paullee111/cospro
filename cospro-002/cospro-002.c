@@ -86,3 +86,35 @@ int main()
 		printf("solution 함수의 반환 값은 %d 입니다", ret);
 
 }
+//예제 6번(오전 과제)
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+int solution(int programs[][2], int programs_len)
+{
+
+	int answer = 0;
+	int count=0;
+	int used_tv[25] = { 0, };
+
+	
+	answer++;
+
+
+return answer;
+}
+
+int main() {
+
+		int programs[][2] = { {1,6},{3,5},{2,8},{4,7} };
+
+	int programs_len = 4;
+
+	int ret = solution(programs, programs_len);
+
+	printf("solution %d\n", ret);
+
+		return 0;
+
+}
