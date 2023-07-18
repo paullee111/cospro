@@ -141,3 +141,74 @@ int main() {
     return 0;
 
 }
+2시에서 3시 수업 (어려움 다시 복습필요)
+	#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+int solution(int height[][4], int height_len) {
+    int count = 0;
+    int cnt=0;
+    int** num = (int**)malloc(sizeof(int*) * height_len);
+    for (int i = 0; i < height_len; i++) {
+        num[i] = (int*)malloc(sizeof(int) * 4);
+    }
+
+    for (int i = 0; i < height_len; i++) {
+        for (int j = 0; j < 4; j++) { 
+            num[i][j] = height[i][j];
+        }
+    }
+
+    for (int i = 0; i < height_len; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (i != 0) {
+                if (num[i - 1][j] > num[i][j]) {
+                    cnt++;
+                }
+            }
+            else { cnt++; }
+
+            if (i != height_len - 1) {
+                if (num[i + 1][j] > num[i][j]) {
+                    cnt++;
+                }
+            }
+            else { cnt++; }
+
+            if (j != 0) {
+                if (num[i][j - 1] > num[i][j]) {
+                    cnt++;
+                }
+            }
+            else { cnt++; }
+
+            if (j != 3) {
+                if (num[i][j + 1] > num[i][j]) {
+                    cnt++;
+                }
+            }
+            else { cnt++; }
+
+            if (cnt == 4) {
+                count++;
+            }
+            cnt = 0;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int height[][4] = { {3,6,2,8}, {7,3,4,2}, {8,6,7,3}, {5,3,2,9} };
+
+    int height_len = 4;
+
+    int ret = solution(height, height_len = 4);
+
+    printf("solution %d\n", ret);
+
+    return 0;
+
+}
