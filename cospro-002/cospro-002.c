@@ -51,3 +51,38 @@ int main() {
 
 			return 0;
 }
+//예제 8번
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+int solution(int classes[], int len, int m)
+{
+	int answer = 0;
+	int num=0;
+	int num1 = 0;
+	for (int i = 0; i < len; i++) {
+		num+= classes[i] / m; 
+		num1= classes[i] % m; 
+		if (num1 <= 30 && num1>0) {
+			num++;
+		}
+	}
+
+	answer = num;
+	return answer;
+
+}
+
+int main()
+{
+
+	int classes[] = { 80, 45, 33, 20 };
+
+	int m = 30;
+	int len = 4;
+	int ret = solution(classes, len, m);
+
+		printf("solution 함수의 반환 값은 %d 입니다", ret);
+
+}
