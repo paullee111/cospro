@@ -51,35 +51,33 @@ int main() {
 
 }
 예제5번
-  #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 int solution(int socks[], int socks_len) {
-   int answer = 0;
-   int* num = (int*)malloc(sizeof(int) * socks_len);
-   for (int i = 0; i < socks_len; i++) {
-      num[i] = socks[i];
-   }
-   for (int i = 0; i < socks_len; i++){
-      if (num[i] > 1) {
-         answer = answer + num[i] / 2; 
-   }
-
-   }
-
-      return answer;
+    int answer = 0;
+    int* sock = (int*)malloc(sizeof(int) * socks_len);
+    int color[3] = { 0, };
+    for (int i = 0; i < socks_len; i++) {
+        sock[i] = socks[i]; 
+    } 
+    for (int i = 0; i < socks_len; i++) {
+        color[sock[i] - 1]++;
+    }
+    answer = color[0] / 2 + color[1] / 2 + color[2] / 2;
+    return answer;
 }
 
 int main() {
-      int socks[] = { 1,2,1,3,2,1 };
+    int socks[] = { 1,2,1,3,2,1 };
 
-   int socks_len = 6;
+    int socks_len = 6;
 
-   int ret = solution(socks, socks_len);
+    int ret = solution(socks, socks_len);
 
-      printf("solution %d\n", ret);
+    printf("solution %d\n", ret);
 
-      return 0;
+    return 0;
 
 }
