@@ -119,18 +119,14 @@ int main() {
         return 0;
 }
 2023_07_18 1~2시 수업 
-	#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 int solution(int korean, int english) {
     int answer = 0;
-    int min=0;
     int a= korean + english;  
-    min = 210 - a; 
-    answer = min;
-   
-    return answer;
+    return answer= 210 - a; ;
 }
 
 int main() {
