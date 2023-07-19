@@ -1,4 +1,4 @@
-예제 10번 과제 
+/*예제 10번 과제 
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -111,6 +111,7 @@ int main()
 	Calculation(x2, y2, angle_degree2);
 	printf(" return : %6.3f %6.3f \n", x_new, y_new);
 }
+*/
 예제 11번  (과제 )
 #include <stdio.h>
 #include <stdbool.h>
