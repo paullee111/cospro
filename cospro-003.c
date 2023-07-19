@@ -111,3 +111,37 @@ int main()
 	Calculation(x2, y2, angle_degree2);
 	printf(" return : %6.3f %6.3f \n", x_new, y_new);
 }
+예제 11번  (과제 )
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+int* solution(int numer1, int denom1, int numer2, int denom2) {
+	int top;
+	int bot;
+	int a=0;
+	// return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
+	int* answer = (int*)malloc(sizeof (int)* 2);
+	top = (numer1 * denom2) + (numer2 * denom1);
+	bot = (denom1 * denom2);
+	for (int i = 1; i < top; i++) {
+		if (top % i == 0 && bot % i == 0) {
+			a = i;
+		}
+	}
+	answer[0] = (top / a); 
+	answer[1] = (bot / a);
+
+
+
+	return answer;
+}
+
+int main() {
+	int numer1=1;
+	int denom1=2;
+	int numer2=3;
+	int denom2=4; 
+	int* result = solution(numer1, denom1, numer2, denom2);
+	printf("solution 함수의 반환 값:%d %d\n", result[0], result[1]);
+
+}
